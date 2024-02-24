@@ -54,6 +54,46 @@ body header .head-bg .paper {
   height: 100%;
   mix-blend-mode: color-burn;
 }
+body header .head-bg .chess-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+body header .head-bg .chess-wrapper img {
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: all 0.5s ease;
+}
+body header .head-bg .chess-wrapper .ft-chess {
+  width: 15vw;
+  z-index: 2;
+  transform: rotate(-3deg);
+  margin-top: 50vh;
+}
+body header .head-bg .chess-wrapper .m-chess {
+  width: 7vw;
+  z-index: 2;
+  margin-top: 55vh;
+  margin-left: 2vw;
+}
+body header .head-bg .chess-wrapper .tl-chess {
+  width: 9vw;
+  z-index: 0;
+  transform: rotate(-6deg);
+  margin-left: 2vw;
+  margin-bottom: 13vh;
+}
+body header .head-bg .chess-wrapper .tr-chess {
+  width: 10vw;
+  z-index: 0;
+  transform: rotate(4deg);
+  margin-bottom: 50vh;
+  margin-left: 2vw;
+}
 body main .bg-line {
   display: flex;
   align-items: center;
@@ -101,6 +141,29 @@ body main .bg-line .run-item {
     height: 30%; /* высота на мобильных устройствах */
     width: auto;
   }
+  body header .head-bg .chess-wrapper .ft-chess {
+    width: 26vw;
+    margin-bottom: 0vh;
+    margin-top: 20vh;
+    margin-left: 6vw;
+  }
+  body header .head-bg .chess-wrapper .m-chess {
+    width: 11vw;
+    margin-top: 24vh;
+    margin-left: 5vw;
+    visibility: hidden;
+  }
+  body header .head-bg .chess-wrapper .tl-chess {
+    width: 14vw;
+    margin-left: 5vw;
+    margin-bottom: 8vh;
+  }
+  body header .head-bg .chess-wrapper .tr-chess {
+    width: 16vw;
+    margin-top: -19vh;
+    margin-bottom: 0vh;
+    margin-left: -5vw;
+  }
   body main .bg-line {
     font-size: 1.1em;
   }
@@ -120,6 +183,28 @@ body main .bg-line .run-item {
     height: 50%; /* высота на планшетах */
     width: auto;
   }
+  body header .head-bg .chess-wrapper .ft-chess {
+    width: 23vw;
+    margin-bottom: 0vh;
+    margin-top: 35vh;
+    margin-left: 3vw;
+  }
+  body header .head-bg .chess-wrapper .m-chess {
+    width: 11vw;
+    margin-top: 38vh;
+    margin-left: 5vw;
+  }
+  body header .head-bg .chess-wrapper .tl-chess {
+    width: 13vw;
+    margin-left: 5vw;
+    margin-bottom: 11vh;
+  }
+  body header .head-bg .chess-wrapper .tr-chess {
+    width: 16vw;
+    margin-top: -30vh;
+    margin-bottom: 0vh;
+    margin-left: -2vw;
+  }
   body main .bg-line {
     font-size: 1.2em;
   }
@@ -138,6 +223,28 @@ body main .bg-line .run-item {
   body header .head-bg .city {
     height: 60%; /* высота на больших планшетах и небольших мониторах */
     width: auto;
+  }
+  body header .head-bg .chess-wrapper .ft-chess {
+    width: 15vw;
+    margin-bottom: 0vh;
+    margin-top: 40vh;
+    margin-left: 3vw;
+  }
+  body header .head-bg .chess-wrapper .m-chess {
+    width: 8vw;
+    margin-top: 43vh;
+    margin-left: 4vw;
+  }
+  body header .head-bg .chess-wrapper .tl-chess {
+    width: 9vw;
+    margin-left: 5vw;
+    margin-bottom: 15vh;
+  }
+  body header .head-bg .chess-wrapper .tr-chess {
+    width: 9vw;
+    margin-top: 0vh;
+    margin-bottom: 50vh;
+    margin-left: 3vw;
   }
   body main .bg-line {
     font-size: 1.3em;

@@ -37,26 +37,7 @@ body{
                     background-size: 50vw, contain;
                     transition: all 0.5s ease;
                 }
-                // .ellips-wrapper{
-                //     width: 100vw;
-                //     background-color: $run-line-bg;
-                //     background-image: url("../source/ellipse.png");
-                //     background-repeat: no-repeat;
-                //     .ellipse {
-                //         width: 43vw;
-                //         margin: 0 2.2vw;
-                //         z-index: 0;
-                //     }
-                    
-                //     .ellipse-text {
-                //         position: absolute;
-                //         top: 50%;
-                //         left: 50%;
-                //         transform: translate(-50%, -50%);
-                //         mix-blend-mode: overlay;
-                //         z-index: 1;
-                //     }
-                // }
+                
             }
             
             
@@ -88,7 +69,48 @@ body{
                 height: 100%;
                 mix-blend-mode: color-burn;
             }
+            
+            .chess-wrapper{
+                display: flex;
+                flex-wrap: wrap;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                overflow: hidden;
 
+                img {
+                    height: auto;
+                    object-fit: contain;
+                    transition: all 0.5s ease;
+                }
+
+                .ft-chess{
+                    width: 15vw;
+                    z-index: 2;
+                    transform: rotate(-3deg);
+                    margin-top: 50vh;
+                }
+                .m-chess {
+                    width: 7vw;
+                    z-index: 2;
+                    margin-top: 55vh;
+                    margin-left: 2vw;
+                }
+                .tl-chess{
+                    width: 9vw;
+                    z-index: 0;
+                    transform: rotate(-6deg);
+                    margin-left: 2vw;
+                    margin-bottom: 13vh;
+                }
+                .tr-chess{
+                    width: 10vw;
+                    z-index: 0;
+                    transform: rotate(4deg);
+                    margin-bottom: 50vh;
+                    margin-left: 2vw;
+                }
+            }
            
         }
     }
@@ -150,6 +172,32 @@ body{
                     height: 30%; /* высота на мобильных устройствах */
                     width: auto;
                 }
+
+                .chess-wrapper{
+                    .ft-chess{
+                        width: 26vw;
+                        margin-bottom: 0vh;
+                        margin-top: 20vh;
+                        margin-left: 6vw;
+                    }
+                    .m-chess {
+                        width: 11vw;
+                        margin-top: 24vh;
+                        margin-left: 5vw;
+                        visibility: hidden;
+                    }
+                    .tl-chess{
+                        width: 14vw;
+                        margin-left: 5vw;
+                        margin-bottom: 8vh;
+                    }
+                    .tr-chess{
+                        width: 16vw;
+                        margin-top: -19vh;
+                        margin-bottom: 0vh;
+                        margin-left: -5vw;
+                    }
+                }
             }
         }
 
@@ -180,6 +228,31 @@ body{
                     height: 50%; /* высота на планшетах */
                     width: auto;
                 }
+
+                .chess-wrapper{
+                    .ft-chess{
+                        width: 23vw;
+                        margin-bottom: 0vh;
+                        margin-top: 35vh;
+                        margin-left: 3vw;
+                    }
+                    .m-chess {
+                        width: 11vw;
+                        margin-top:38vh;
+                        margin-left: 5vw;
+                    }
+                    .tl-chess{
+                        width: 13vw;
+                        margin-left: 5vw;
+                        margin-bottom: 11vh;
+                    }
+                    .tr-chess{
+                        width: 16vw;
+                        margin-top: -30vh;
+                        margin-bottom: 0vh;
+                        margin-left: -2vw;
+                    }
+                }
             }
         }
 
@@ -209,6 +282,32 @@ body{
                 .city {
                     height: 60%; /* высота на больших планшетах и небольших мониторах */
                     width: auto;
+                }
+
+                
+                .chess-wrapper{
+                    .ft-chess{
+                        width: 15vw;
+                        margin-bottom: 0vh;
+                        margin-top: 40vh;
+                        margin-left: 3vw;
+                    }
+                    .m-chess {
+                        width: 8vw;
+                        margin-top:43vh;
+                        margin-left: 4vw;
+                    }
+                    .tl-chess{
+                        width: 9vw;
+                        margin-left: 5vw;
+                        margin-bottom: 15vh;
+                    }
+                    .tr-chess{
+                        width: 9vw;
+                        margin-top: 0vh;
+                        margin-bottom: 50vh;
+                        margin-left: 3vw;
+                    }
                 }
             }
         }
