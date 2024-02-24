@@ -9,3 +9,16 @@ for (let i = 0; i < 2; i++) {
                         'ЛЕД ТРОНУЛСЯ, ГОСПОДА ПРИСЯЖНЫЕ ЗАСЕДАТЕЛИ! •&nbsp;';
     runLineWrapper.appendChild(runItem);
 }
+
+function updateChessWrapperWidth() {
+    var city = document.querySelector('.city');
+
+    var chessWrapper = document.querySelector('.chess-wrapper');
+    chessWrapper.style.width = (city.offsetWidth / 2) + "px";
+    chessWrapper.style.height = (city.offsetHeight * 1.2) + "px";
+    console.log(city.offsetHeight)
+}
+
+document.addEventListener("DOMContentLoaded", updateChessWrapperWidth);
+
+window.addEventListener("resize", updateChessWrapperWidth);
