@@ -1,6 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap");
+* {
+  transition: all 0.5s ease;
+}
+
 body header {
   height: 100vh;
   background-color: #E9DED4;
@@ -13,12 +17,13 @@ body header .head {
   overflow: hidden;
 }
 body header .head .header-main-content {
+  z-index: 4;
   position: relative;
   width: 50vw;
   height: 100vh;
 }
 body header .head .header-main-content .header-wrap {
-  width: 36vw;
+  width: 37vw;
   padding-left: 4.8vw;
 }
 body header .head .header-main-content .header-wrap .logo {
@@ -36,12 +41,11 @@ body header .head .header-main-content .header-wrap p {
 }
 body header .head .header-main-content .header-wrap .main-info {
   margin-top: 8vh;
-  margin-bottom: 24px;
 }
 body header .head .header-main-content .header-wrap .main-info h1 {
   font-family: "Merriweather", serif;
   font-weight: 400;
-  font-size: 60px;
+  font-size: 3.8em;
   font-style: normal;
   color: #313131;
   text-transform: uppercase;
@@ -64,7 +68,7 @@ body header .head .header-main-content .header-wrap .main-info p {
   font-style: normal;
   text-transform: none;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.25em;
   color: #313131;
 }
 body header .head .header-main-content .header-wrap .main-info .btns {
@@ -75,15 +79,15 @@ body header .head .header-main-content .header-wrap .main-info .btns {
   font-style: normal;
   text-transform: none;
   text-align: center;
-  font-size: 16px;
-  margin-top: 40px;
+  font-size: 1em;
+  margin-top: 6vh;
 }
 body header .head .header-main-content .header-wrap .main-info .btns .btn-1, body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
-  z-index: 3;
+  z-index: 2;
   width: 50%;
   border: 2px solid #1F1F1F;
   border-radius: 66px;
-  padding: 20px 0;
+  padding: 20px 60px;
   text-decoration: none;
   vertical-align: middle;
   transition: all 0.2s ease;
@@ -91,7 +95,7 @@ body header .head .header-main-content .header-wrap .main-info .btns .btn-1, bod
 body header .head .header-main-content .header-wrap .main-info .btns .btn-1 {
   color: white;
   background-color: #1F1F1F;
-  margin-right: 8px;
+  margin-right: 0.5em;
 }
 body header .head .header-main-content .header-wrap .main-info .btns .btn-1:hover {
   border: 2px solid #FBCE51;
@@ -101,7 +105,7 @@ body header .head .header-main-content .header-wrap .main-info .btns .btn-1:hove
 body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
   color: #1F1F1F;
   background-color: transparent;
-  margin-left: 8px;
+  margin-left: 0.5em;
 }
 body header .head .header-main-content .header-wrap .main-info .btns .btn-2:hover {
   border: 2px solid #1F1F1F;
@@ -115,7 +119,6 @@ body header .head .ell {
   height: 100vh;
   display: flex;
   justify-content: flex-end;
-  transition: all 0.5s ease;
 }
 body header .head .ell .ellips-wrapper {
   position: absolute;
@@ -127,7 +130,6 @@ body header .head .ell .ellips-wrapper {
   background-position: center;
   background-blend-mode: overlay;
   background-size: 50vw, contain;
-  transition: all 0.5s ease;
 }
 body header .head .city {
   pointer-events: none;
@@ -142,7 +144,7 @@ body header .head .city {
 }
 body header .head .paper {
   pointer-events: none;
-  z-index: 2;
+  z-index: 6;
   position: absolute;
   top: 0;
   left: 0;
@@ -163,17 +165,16 @@ body header .head .chess-wrapper img {
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
-  transition: all 0.5s ease;
 }
 body header .head .chess-wrapper .ft-chess {
   width: 15vw;
-  z-index: 2;
+  z-index: 7;
   transform: rotate(-3deg);
   margin-top: 50vh;
 }
 body header .head .chess-wrapper .m-chess {
   width: 7vw;
-  z-index: 2;
+  z-index: 7;
   margin-top: 55vh;
   margin-left: 2vw;
 }
@@ -224,6 +225,46 @@ body main .bg-line .run-item {
 }
 
 @media only screen and (max-width: 600px) {
+  body header .head {
+    flex-direction: column;
+  }
+  body header .head .header-main-content {
+    width: 100vw;
+  }
+  body header .head .header-main-content .header-wrap {
+    width: 100%;
+    padding-left: 4.8vw;
+  }
+  body header .head .header-main-content .header-wrap .main-info {
+    margin-top: 4vh;
+  }
+  body header .head .header-main-content .header-wrap .main-info h1 {
+    font-size: 2.25em;
+  }
+  body header .head .header-main-content .header-wrap .main-info p {
+    width: 87%;
+    font-size: 18px;
+    text-align: left;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns {
+    width: 90%;
+    flex-direction: column;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-1, body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
+    z-index: 3;
+    width: 100%;
+    padding: 18px 0;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-1 {
+    margin-right: 0vw;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
+    border: 2px solid white;
+    color: #1F1F1F;
+    background-color: white;
+    margin-top: 2vh;
+    margin-left: 0vw;
+  }
   body header .head .ell {
     justify-content: center;
     align-items: flex-end;
@@ -266,6 +307,46 @@ body main .bg-line .run-item {
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
+  body header .head {
+    flex-direction: column;
+  }
+  body header .head .header-main-content {
+    width: 100vw;
+  }
+  body header .head .header-main-content .header-wrap {
+    width: 60%;
+    padding-left: 4.8vw;
+  }
+  body header .head .header-main-content .header-wrap .main-info {
+    margin-top: 4vh;
+  }
+  body header .head .header-main-content .header-wrap .main-info h1 {
+    font-size: 2.25em;
+  }
+  body header .head .header-main-content .header-wrap .main-info p {
+    width: 87%;
+    font-size: 18px;
+    text-align: left;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns {
+    width: 90%;
+    flex-direction: column;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-1, body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
+    z-index: 3;
+    width: 100%;
+    padding: 18px 0;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-1 {
+    margin-right: 0vw;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
+    border: 2px solid white;
+    color: #1F1F1F;
+    background-color: white;
+    margin-top: 2vh;
+    margin-left: 0vw;
+  }
   body header .head .ell {
     justify-content: flex-end;
     align-items: flex-end;
@@ -307,6 +388,39 @@ body main .bg-line .run-item {
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
+  body header .head .header-main-content {
+    width: 100vw;
+  }
+  body header .head .header-main-content .header-wrap .main-info {
+    margin-top: 4vh;
+  }
+  body header .head .header-main-content .header-wrap .main-info h1 {
+    font-size: 2.25em;
+  }
+  body header .head .header-main-content .header-wrap .main-info p {
+    width: 87%;
+    font-size: 18px;
+    text-align: left;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns {
+    width: 90%;
+    flex-direction: column;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-1, body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
+    z-index: 3;
+    width: 100%;
+    padding: 18px 0;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-1 {
+    margin-right: 0vw;
+  }
+  body header .head .header-main-content .header-wrap .main-info .btns .btn-2 {
+    border: 2px solid white;
+    color: #1F1F1F;
+    background-color: white;
+    margin-top: 2vh;
+    margin-left: 0vw;
+  }
   body header .head .ell {
     justify-content: center;
     align-items: flex-end;
