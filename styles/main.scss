@@ -1,20 +1,134 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 
 $header-bg: #E9DED4;
 $run-line-bg: #F54932;
-$city-broder: #FFFFFF;
+$city-border: #FFFFFF;
+$text-logo: #595653;
+$text-head: #313131;
+$btn-color: #1F1F1F;
+$hover-btn: #FBCE51;
 
 body{
     header{
         height: 100vh;
         background-color: $header-bg;
 
-        .head-bg{
+        .head{
             display: flex;
             align-items: flex-end;
             width: 100%;
             height: 100vh;
             overflow: hidden;
+
+            .header-main-content{
+                position: relative;
+                width: 50vw;
+                height: 100vh;
+    
+                .header-wrap{
+                    width: 36vw;
+                    padding-left: 4.8vw;
+                    .logo{
+                        pointer-events: none;
+                        display: flex;
+                        justify-content: left;
+                        font-family: "Golos Text", sans-serif;
+                        font-weight: 700;
+                        font-style: normal;
+                    }
+                    p{
+                        color: $text-logo;
+                        text-transform: uppercase;
+                        margin-left: 0.5em;
+                    }
+
+                    .main-info{
+                        margin-top: 8vh;
+                        margin-bottom: 24px;
+                        h1{
+                            font-family: "Merriweather", serif;
+                            font-weight: 400;
+                            font-size: 60px;
+                            font-style: normal;
+                            color: $text-head;
+                            text-transform: uppercase;
+                            span{
+                                display: block;
+                            }
+
+                            .left-text{
+                                text-align: left;
+                            }
+                            .right-text{
+                                text-align: right;
+                                .center{
+                                    text-align: center;
+                                }
+                            }
+                        }
+                        
+                        p{
+                            font-family: "Golos Text", sans-serif;
+                            font-weight: 400;
+                            font-style: normal;
+                            text-transform: none;
+                            text-align: center;
+                            font-size: 18px;
+                            color: $text-head;
+                        }
+
+                        .btns{
+                            display: flex;
+                            justify-content: space-between;
+                            font-family: "Golos Text", sans-serif;
+                            font-weight: 500;
+                            font-style: normal;
+                            text-transform: none;
+                            text-align: center;
+                            font-size: 16px;
+                            margin-top: 40px;
+
+                            .btn-1, .btn-2{
+                                z-index: 3;
+                                width: 50%;
+                                border: 2px solid $btn-color;
+                                border-radius: 66px;
+                                padding: 20px 0;
+                                text-decoration: none;
+                                vertical-align: middle;
+                                transition: all 0.2s ease;
+                            }
+
+                            .btn-1{
+                                color: white;
+                                background-color: $btn-color;
+                                margin-right: 8px;
+
+                                &:hover{
+                                    border: 2px solid $hover-btn;
+                                    background-color: $hover-btn;
+                                    color: $btn-color;
+                                }
+                            }
+
+
+                            .btn-2{
+                                color: $btn-color;
+                                background-color: transparent;
+                                margin-left: 8px;
+
+                                &:hover{
+                                    border: 2px solid $btn-color;
+                                    background-color: $btn-color;
+                                    color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
 
             
             .ell{
@@ -45,8 +159,6 @@ body{
             .city{
                 pointer-events: none;
                 z-index: 1;
-
-                pointer-events: none;
                 position: absolute;
                 bottom: 0;
                 right: 0;
@@ -54,9 +166,9 @@ body{
                 width: 100%;
                 transition: height 0.5s ease;
 
-                filter: drop-shadow(0px -8px 0 $city-broder) 
-                        drop-shadow(-8px 0px 0 $city-broder)
-                        drop-shadow(8px 3px 0 $city-broder);
+                filter: drop-shadow(0px -8px 0 $city-border) 
+                        drop-shadow(-8px 0px 0 $city-border)
+                        drop-shadow(8px 3px 0 $city-border);
             }
 
             .paper {
@@ -71,6 +183,7 @@ body{
             }
             
             .chess-wrapper{
+                pointer-events: none;
                 display: flex;
                 flex-wrap: wrap;
                 position: absolute;
@@ -156,7 +269,7 @@ body{
 @media only screen and (max-width: 600px) {
     body {
         header {
-            .head-bg {
+            .head {
                 .ell{
                     justify-content: center;
                     align-items:flex-end;
@@ -212,7 +325,7 @@ body{
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     body {
         header {
-            .head-bg {
+            .head {
                 .ell{
                     justify-content: flex-end;
                     align-items:flex-end;
@@ -267,7 +380,7 @@ body{
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
     body {
         header {
-            .head-bg {
+            .head {
                 .ell{
                     justify-content: center;
                     align-items:flex-end;
