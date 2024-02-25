@@ -1,6 +1,5 @@
+// Генерация элементов .run-item
 const runLineWrapper = document.querySelector('.run-line-wrapper');
-
-// Генерируем два элемента .run-item
 for (let i = 0; i < 2; i++) {
     const runItem = document.createElement('div');
     runItem.classList.add('run-item');
@@ -10,15 +9,76 @@ for (let i = 0; i < 2; i++) {
     runLineWrapper.appendChild(runItem);
 }
 
+// Обновление ширины элемента .chess-wrapper
 function updateChessWrapperWidth() {
-    var city = document.querySelector('.city');
-
-    var chessWrapper = document.querySelector('.chess-wrapper');
-    chessWrapper.style.width = (city.offsetWidth / 2) + "px";
-    chessWrapper.style.height = (city.offsetHeight * 1.2) + "px";
-    console.log(city.offsetHeight)
+    const city = document.querySelector('.city');
+    const chessWrapper = document.querySelector('.chess-wrapper');
+    chessWrapper.style.width = `${city.offsetWidth / 2}px`;
+    chessWrapper.style.height = `${city.offsetHeight * 1.2}px`;
 }
 
-document.addEventListener("DOMContentLoaded", updateChessWrapperWidth);
+// Создание блока поддержки в десктоп версии
+function createSupportBlock() {
+    const mainContent = document.getElementById('main-content');
+    mainContent.innerHTML = '';
 
-window.addEventListener("resize", updateChessWrapperWidth);
+    const supportDiv = document.createElement('div');
+    supportDiv.classList.add('support');
+
+    const h2First = document.createElement('h2');
+    h2First.innerHTML = 'Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <span>«Плодотворная дебютная идея»</span>';
+
+    const img = document.createElement('img');
+    img.src = './source/chees-player.png';
+
+    supportDiv.appendChild(h2First);
+    supportDiv.appendChild(img);
+
+    mainContent.appendChild(supportDiv);
+}
+
+// Создание блока поддержки в мобильной версии
+function createMobileSupportBlock() {
+    const mainContent = document.getElementById('main-content');
+    mainContent.innerHTML = '';
+
+    const supportDiv = document.createElement('div');
+    supportDiv.classList.add('support');
+
+    const h2First = document.createElement('h2');
+    h2First.textContent = 'Чтобы поддержать Международный васюкинский турнир';
+
+    const img = document.createElement('img');
+    img.src = './source/chees-player.png';
+
+    const h2Second = document.createElement('h2');
+    h2Second.innerHTML = 'посетите лекцию на тему: <span>«Плодотворная дебютная идея»</span>';
+
+    supportDiv.appendChild(h2First);
+    supportDiv.appendChild(img);
+    supportDiv.appendChild(h2Second);
+
+    mainContent.appendChild(supportDiv);
+}
+
+// Проверка ширины экрана и создание соответствующего блока поддержки
+function checkScreenWidth() {
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1024) {
+        createSupportBlock();
+    } else {
+        createMobileSupportBlock();
+    }
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+    checkScreenWidth();
+    updateChessWrapperWidth();
+});
+
+// Обработка изменений ширины экрана
+window.addEventListener("resize", () => {
+    checkScreenWidth();
+    updateChessWrapperWidth();
+});
