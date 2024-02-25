@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
 
 $header-bg: #E9DED4;
@@ -11,6 +11,10 @@ $hover-btn: #FBCE51;
 
 *{
     transition: all 0.5s ease;
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 body{
@@ -231,40 +235,68 @@ body{
            
         }
     }
+
+    .bg-line{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        overflow: hidden;
+        padding: 10px 0px;
+        height: 2em;
+        margin: 0 auto;
+        background-color: $run-line-bg;
+        font-family: "Merriweather", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #fff;
+        transition: font-size 0.5s ease;
+
+        .run-line-wrapper {
+            display: flex;
+        }
+          
+        .run-item{
+            font-size: 1.5em;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% {
+                transform: translateZ(0);
+            }
+            to {
+            transform: translate3d(-100%, 0, 0);
+            }
+        }
+    }
     
     main{
-        .bg-line{
+        margin-top: 14vh;
+        padding: 0 4.5vw;
+        .support{
+            width: 100%;
+            margin-bottom: 12.5vh;
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            text-align: center;
-            overflow: hidden;
-            padding: 5px 0px;
-            height: 2em;
-            margin: 0 auto;
-            background-color: $run-line-bg;
-            font-family: "Merriweather", serif;
-            font-weight: 400;
-            font-size: 1.5em;
-            font-style: normal;
-            color: #fff;
-            transition: font-size 0.5s ease;
+            h2{
+                width: 55.3%;
+                font-family: "Merriweather", serif;
+                font-weight: 400;
+                font-size: 2.25em;
+                font-style: normal;
+                color: $text-head;
+                text-transform: uppercase;
+                span{
+                    font-weight: 700;
+                    color: $run-line-bg;
+                }
+            }
 
-            .run-line-wrapper {
-                display: flex;
-            }
-              
-            .run-item{
-                white-space: nowrap;
-                animation: marquee 15s linear infinite;
-            }
-            
-            @keyframes marquee {
-                0% {
-                    transform: translateZ(0);
-                }
-                to {
-                transform: translate3d(-100%, 0, 0);
-                }
+            img{
+                width: 28.7%;
+                border-radius: 50%;
             }
         }
     }
@@ -330,7 +362,7 @@ body{
                 }
 
                 .city {
-                    height: 30%; /* высота на мобильных устройствах */
+                    height: 30%;
                     width: auto;
                 }
 
@@ -362,11 +394,36 @@ body{
             }
         }
 
-        main{
-            .bg-line{
+        .bg-line{
+            padding: 5px 0px;
+            .run-item{
                 font-size: 1.1em;
             }
         }
+
+        main{
+            margin-top: 7vh;
+            padding: 0 6vw;
+            .support{
+                width: 100%;
+                margin-bottom: 5vh;
+                display: flex;
+                flex-direction: column;
+                justify-content:baseline;
+                align-items: left;
+                h2{
+                    width: 100%;
+                    font-size: 1.8em;
+                }
+    
+                img{
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+        }
+
+       
     }
 }
 
@@ -462,9 +519,32 @@ body{
             }
         }
 
-        main{
-            .bg-line{
+        .bg-line{
+            padding: 5px 0px;
+            .run-item{
                 font-size: 1.2em;
+            }
+        }
+
+        main{
+            margin-top: 7vh;
+            padding: 0 6vw;
+            .support{
+                width: 100%;
+                margin-bottom: 5vh;
+                display: flex;
+                flex-direction: column;
+                justify-content:baseline;
+                align-items: left;
+                h2{
+                    width: 100%;
+                    font-size: 1.8em;
+                }
+    
+                img{
+                    width: 100%;
+                    border-radius: 50%;
+                }
             }
         }
     }
@@ -558,9 +638,30 @@ body{
                 }
             }
         }
-        main{
-            .bg-line{
+        .bg-line{
+            .run-item{
                 font-size: 1.3em;
+            }
+        }
+
+        main{
+            margin-top: 7vh;
+            padding: 0 6vw;
+            .support{
+                width: 100%;
+                margin-bottom: 5vh;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                h2{
+                    width: 100%;
+                    font-size: 1.8em;
+                }
+    
+                img{
+                    width: 60%;
+                    border-radius: 50%;
+                }
             }
         }
     }

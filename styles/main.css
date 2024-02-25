@@ -1,8 +1,12 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap");
 * {
   transition: all 0.5s ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body header {
@@ -192,26 +196,26 @@ body header .head .chess-wrapper .tr-chess {
   margin-bottom: 50vh;
   margin-left: 2vw;
 }
-body main .bg-line {
+body .bg-line {
   display: flex;
   align-items: center;
   text-align: center;
   overflow: hidden;
-  padding: 5px 0px;
+  padding: 10px 0px;
   height: 2em;
   margin: 0 auto;
   background-color: #F54932;
   font-family: "Merriweather", serif;
   font-weight: 400;
-  font-size: 1.5em;
   font-style: normal;
   color: #fff;
   transition: font-size 0.5s ease;
 }
-body main .bg-line .run-line-wrapper {
+body .bg-line .run-line-wrapper {
   display: flex;
 }
-body main .bg-line .run-item {
+body .bg-line .run-item {
+  font-size: 1.5em;
   white-space: nowrap;
   animation: marquee 15s linear infinite;
 }
@@ -222,6 +226,34 @@ body main .bg-line .run-item {
   to {
     transform: translate3d(-100%, 0, 0);
   }
+}
+body main {
+  margin-top: 14vh;
+  padding: 0 4.5vw;
+}
+body main .support {
+  width: 100%;
+  margin-bottom: 12.5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main .support h2 {
+  width: 55.3%;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-size: 2.25em;
+  font-style: normal;
+  color: #313131;
+  text-transform: uppercase;
+}
+body main .support h2 span {
+  font-weight: 700;
+  color: #F54932;
+}
+body main .support img {
+  width: 28.7%;
+  border-radius: 50%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -276,7 +308,7 @@ body main .bg-line .run-item {
     background-size: 350px, contain;
   }
   body header .head .city {
-    height: 30%; /* высота на мобильных устройствах */
+    height: 30%;
     width: auto;
   }
   body header .head .chess-wrapper .ft-chess {
@@ -302,8 +334,31 @@ body main .bg-line .run-item {
     margin-bottom: 0vh;
     margin-left: -5vw;
   }
-  body main .bg-line {
+  body .bg-line {
+    padding: 5px 0px;
+  }
+  body .bg-line .run-item {
     font-size: 1.1em;
+  }
+  body main {
+    margin-top: 7vh;
+    padding: 0 6vw;
+  }
+  body main .support {
+    width: 100%;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: left;
+  }
+  body main .support h2 {
+    width: 100%;
+    font-size: 1.8em;
+  }
+  body main .support img {
+    width: 100%;
+    border-radius: 50%;
   }
 }
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
@@ -383,8 +438,31 @@ body main .bg-line .run-item {
     margin-bottom: 0vh;
     margin-left: -2vw;
   }
-  body main .bg-line {
+  body .bg-line {
+    padding: 5px 0px;
+  }
+  body .bg-line .run-item {
     font-size: 1.2em;
+  }
+  body main {
+    margin-top: 7vh;
+    padding: 0 6vw;
+  }
+  body main .support {
+    width: 100%;
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    align-items: left;
+  }
+  body main .support h2 {
+    width: 100%;
+    font-size: 1.8em;
+  }
+  body main .support img {
+    width: 100%;
+    border-radius: 50%;
   }
 }
 @media only screen and (min-width: 1025px) and (max-width: 1440px) {
@@ -457,7 +535,26 @@ body main .bg-line .run-item {
     margin-bottom: 50vh;
     margin-left: 3vw;
   }
-  body main .bg-line {
+  body .bg-line .run-item {
     font-size: 1.3em;
+  }
+  body main {
+    margin-top: 7vh;
+    padding: 0 6vw;
+  }
+  body main .support {
+    width: 100%;
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  body main .support h2 {
+    width: 100%;
+    font-size: 1.8em;
+  }
+  body main .support img {
+    width: 60%;
+    border-radius: 50%;
   }
 }/*# sourceMappingURL=main.css.map */
