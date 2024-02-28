@@ -8,6 +8,8 @@ $text-logo: #595653;
 $text-head: #313131;
 $btn-color: #1F1F1F;
 $hover-btn: #FBCE51;
+$table: #D0D0D0;
+$text-blue: #3057A2;
 
 *{
     transition: all 0.5s ease;
@@ -272,6 +274,19 @@ body{
     }
     
     main{
+        h2{
+            width: 55.3%;
+            font-family: "Merriweather", serif;
+            font-weight: 400;
+            font-size: 2.25em;
+            font-style: normal;
+            color: $text-head;
+            text-transform: uppercase;
+            span{
+                font-weight: 700;
+                color: $run-line-bg;
+            }
+        }
         margin-top: 14vh;
         padding: 0 4.5vw;
         .support{
@@ -280,23 +295,98 @@ body{
             display: flex;
             justify-content: space-between;
             align-items: center;
-            h2{
-                width: 55.3%;
-                font-family: "Merriweather", serif;
-                font-weight: 400;
-                font-size: 2.25em;
-                font-style: normal;
-                color: $text-head;
-                text-transform: uppercase;
-                span{
-                    font-weight: 700;
-                    color: $run-line-bg;
-                }
-            }
 
             img{
                 width: 28.7%;
                 border-radius: 50%;
+            }
+        }
+
+        .session-content{
+            display: flex;
+            width: 100%;
+            height: 70vh;
+            justify-content: space-between;
+            align-items:flex-start;
+            margin-bottom: 200px;
+
+            img{
+                width: 34.4%;
+                height: 100%;
+            }
+
+            .session-info{
+                padding-top: 0;
+                display: flex;
+                flex-direction: column;
+                align-items:flex-start;
+                margin-left: 2.7em;
+
+                h2{
+                    width: 100%;
+                }
+
+                .event-table,p{
+                    text-align: left;
+                    font-family: "Golos Text", sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    text-transform: none;
+                    text-align: left;
+                    font-size: 1.2em;
+                    color: $text-head;
+
+                    tr td:nth-child(2){
+                        font-weight: 600;
+
+                    }
+                }
+
+                del{
+                    color: red;
+                    span{
+                        color: $text-head;
+                    }
+                }
+                .event-table {
+                    border-collapse: collapse;
+                    width: 100%;
+                }
+
+                .event-table td {
+                    border: 2px solid $table;
+                    padding: 16px;
+                }
+                  
+                .event-table td:first-child {
+                    padding-left: 0;
+                    width: auto;
+                }
+                
+                .event-table td:last-child {
+                    width: 60%;
+                }
+                  
+                .event-table tr:first-child td {
+                    border-top: none;
+                }
+                  
+                .event-table tr:last-child td {
+                    border-bottom: none;
+                }
+                  
+                .event-table tr td:first-child {
+                    border-left: none;
+                }
+                  
+                .event-table tr td:last-child {
+                    border-right: none;
+                }
+
+                p {
+                    color: $text-blue;
+                }
+                
             }
         }
     }
@@ -404,6 +494,12 @@ body{
         main{
             margin-top: 7vh;
             padding: 0 6vw;
+
+            h2{
+                width: 100%;
+                font-size: 1.8em;
+            }
+
             .support{
                 width: 100%;
                 margin-bottom: 5vh;
@@ -411,10 +507,6 @@ body{
                 flex-direction: column;
                 justify-content:baseline;
                 align-items: left;
-                h2{
-                    width: 100%;
-                    font-size: 1.8em;
-                }
     
                 img{
                     width: 100%;
@@ -529,6 +621,12 @@ body{
         main{
             margin-top: 7vh;
             padding: 0 6vw;
+
+            h2{
+                width: 100%;
+                font-size: 1.8em;
+            }
+
             .support{
                 width: 100%;
                 margin-bottom: 5vh;
@@ -536,10 +634,6 @@ body{
                 flex-direction: column;
                 justify-content:baseline;
                 align-items: left;
-                h2{
-                    width: 100%;
-                    font-size: 1.8em;
-                }
     
                 img{
                     width: 100%;
@@ -647,16 +741,18 @@ body{
         main{
             margin-top: 7vh;
             padding: 0 6vw;
+
+            h2{
+                width: 100%;
+                font-size: 1.8em;
+            }
+
             .support{
                 width: 100%;
                 margin-bottom: 5vh;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                h2{
-                    width: 100%;
-                    font-size: 1.8em;
-                }
     
                 img{
                     width: 60%;
