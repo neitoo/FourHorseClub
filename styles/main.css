@@ -364,7 +364,7 @@ body main .card-stages .card {
   position: relative;
   display: flex;
   align-items: flex-start;
-  background-image: url("/source/card-paper.png");
+  background-image: url("../source/card-paper.png");
   padding: 20px;
   text-align: left;
   background-color: rgba(255, 255, 255, 0.8);
@@ -412,6 +412,120 @@ body main .card-stages .card-7 .card-text {
 }
 body main .navigation-card {
   display: none;
+}
+body main .participants-content {
+  margin-bottom: 140px;
+}
+body main .participants-content .text-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90vw;
+  margin-bottom: 60px;
+}
+body main .participants-content .text-wrap h1 {
+  display: inline;
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3.4em;
+  color: #313131;
+  padding-right: 1vw;
+  text-transform: uppercase;
+}
+body main .participants-content .text-wrap .navigation-participants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main .participants-content .text-wrap .navigation-participants .prev-button-part,
+body main .participants-content .text-wrap .navigation-participants .next-button-part {
+  margin: 0 10px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #313131;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+body main .participants-content .text-wrap .navigation-participants p {
+  font-family: "Golos Text", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: none;
+  color: #313131;
+  font-size: 1.3em;
+}
+body main .participants-content .text-wrap .navigation-participants p span {
+  opacity: 0.6;
+}
+body main .participants-content .slider-container {
+  width: 85%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+body main .participants-content .slider-container .slider {
+  display: flex;
+}
+body main .participants-content .slider-container .slider .page-participants {
+  display: flex;
+}
+body main .participants-content .slider-container .slider .page-participants .card {
+  padding: 0 37px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+body main .participants-content .slider-container .slider .page-participants .card p, body main .participants-content .slider-container .slider .page-participants .card a {
+  font-family: "Golos Text", sans-serif;
+  font-style: normal;
+  text-transform: none;
+  color: #313131;
+  padding: 0;
+  margin: 0;
+}
+body main .participants-content .slider-container .slider .page-participants .card .fullname {
+  margin-top: 28px;
+  font-weight: 600;
+  font-size: 24px;
+}
+body main .participants-content .slider-container .slider .page-participants .card .pos {
+  margin-top: 6px;
+  font-weight: 400;
+  font-size: 20px;
+  opacity: 0.6;
+}
+body main .participants-content .slider-container .slider .page-participants .card .more-info {
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  color: #3057A2;
+  border: 1px solid #3057A2;
+  border-radius: 62px;
+  padding: 12px;
+}
+body main .participants-content .slider-container .slider .page-participants .card .more-info:hover {
+  background-color: #3057A2;
+  color: #FFFFFF;
+}
+body footer {
+  background-color: #E9DED4;
+  padding: 4.5vw;
+  padding-top: 5vh;
+}
+body footer p {
+  font-family: "Golos Text", sans-serif;
+  font-style: normal;
+  text-transform: none;
+  color: #313131;
+  opacity: 0.6;
+  font-size: 1em;
 }
 
 @media only screen and (max-width: 600px) {
