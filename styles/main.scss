@@ -305,10 +305,9 @@ body{
         .session-content{
             display: flex;
             width: 100%;
-            height: 70vh;
             justify-content: space-between;
             align-items:flex-start;
-            margin-bottom: 200px;
+            margin-bottom: 20vh;
 
             img{
                 width: 34.4%;
@@ -389,6 +388,107 @@ body{
                 
             }
         }
+
+        .stages-content{
+            margin-bottom: 20vh;
+            .text-wrap{
+                width: 50vw;
+                margin-bottom: 7vh;
+                h1{
+                    
+                    display: inline;
+                    font-family: "Merriweather", serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    font-size: 3.4em;
+                    color: $text-head;
+                    padding-right: 1vw;
+                    text-transform: uppercase;
+                }
+                p{
+                    display: inline-block;
+                    width: 35%;
+                    line-height: 120%;
+                    font-family: "Golos Text", sans-serif;
+                    font-weight: 400;
+                    font-style: normal;
+                    text-transform: none;
+                    color: $text-blue;
+                    font-size: 1.3em;
+                    word-wrap: break-word;
+                }
+            }
+            
+        }
+
+        .card-stages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+
+            .card {
+                position: relative;
+                display: flex;
+                align-items: flex-start;
+                background-image: url("/source/card-paper.png");
+                padding: 20px;
+                text-align: left;
+                background-color: rgba(255, 255, 255, 0.8);
+    
+                .card-number{
+                    width: 36px;
+                    height: 36px;
+                    line-height: 36px; 
+                    text-align: center;
+                    background-color: $city-border;
+                    border-radius: 50%;
+                    margin-right: 16px;
+                    flex-shrink: 0;
+                }
+    
+                div{
+                    font-family: "Golos Text", sans-serif;
+                    font-weight: 500;
+                    font-style: normal;
+                    text-transform: none;
+                    color: $text-head;
+                    font-size: 20px;
+                }
+    
+                img{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    transform: translateY(-50%);
+                }
+            }
+            
+            .card-1,
+            .card-2,
+            .card-4,
+            .card-5 {
+                grid-column: span 1;
+            }
+            
+            .card-3,
+            .card-6 {
+                grid-row: span 2;
+            }
+            
+            .card-7 {
+                grid-column: span 2;
+                grid-row: span 2;
+                .card-text{
+                    width: 50%;
+                }
+            }
+        }
+        
+        .navigation-card{
+            display: none;
+        }
+        
     }
 }
 
@@ -513,6 +613,160 @@ body{
                     border-radius: 50%;
                 }
             }
+
+            .session-content{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items:flex-start;
+                margin-bottom: 20vh;
+    
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+    
+                .session-info{
+                    padding-top: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items:flex-start;
+                    margin-left: 0;
+
+                    .event-table {
+                        display: none; 
+                    }
+
+                    .event-table {
+                        display: table; 
+                        width: 100%; 
+                    }
+                
+                    .event-table tr {
+                        display: block;
+                        margin-bottom: 10px;
+                    }
+                
+                    .event-table td {
+                        display: block; 
+                        border: none; 
+                        padding: 0; 
+                        padding-bottom: 10px;
+                    }
+
+                    .event-table tr td:last-child {
+                        border-bottom: 2px solid $table;
+                    }
+                
+                    .event-table td:first-child {
+                        margin-bottom: 5px; 
+                    }
+                    
+                    .event-table td:last-child {
+                        width: 100%;
+                    }
+                      
+                    .event-table tr:last-child td {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            .stages-content{
+                .text-wrap{
+                    width: 100vw;
+                    h1{
+                        font-size: 2.1em;
+                    }
+                    p{
+                        width: 100%;
+                        font-size: 1.1em;
+                    }
+                }
+
+                .card-stages {
+                    display: flex;
+                    overflow: hidden;
+                    gap: 0;
+    
+                    .airplane{
+                        z-index: 1;
+                        position: absolute;
+                        width: 90vw;
+                        transform: translateY(-20%);
+                    }
+    
+                    .card{
+                        flex: 1 0 auto;
+                        flex-direction: column;
+                        margin-top: 15vh;
+                        padding-top: 62px;
+                        height: 38vh;
+                        width: 87.5%;
+                        .card-row{
+                            display: flex;
+                            padding-bottom: 28px;
+                        }
+                    }
+    
+                    .card-1,
+                    .card-2,
+                    .card-3,
+                    .card-4,
+                    .card-5 {
+                        grid-column: span 1;
+                    }
+                }
+
+                .navigation-card{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 20px;
+
+                    .prev-button,
+                    .next-button {
+                        margin: 0 10px;
+                        width: 36px;
+                        height: 36px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $text-head;
+                        border-radius: 50%;
+                        border: none;
+                        cursor: pointer;
+
+                        &.end{
+                            background-color: #D9D9D9;
+                        }
+                    }
+                    
+
+                    .dots {
+                        display: flex;
+
+                        .dot {
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 50%;
+                            margin: 0 5px;
+                            background-color: #D9D9D9;
+
+                            &.active {
+                                background-color: $text-head;
+                            }
+                        }
+                        
+                
+                    }
+                }
+                
+            }
+            
+        
+            
         }
 
        
