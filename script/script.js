@@ -1,5 +1,74 @@
+const participants = [
+  {
+    imgSrc: "./source/chelik.png",
+    fullName: "Хозе-Рауль Капабланка",
+    position: "Чемпион мира по шахматам",
+  },
+  {
+    imgSrc: "./source/chelik.png",
+    fullName: "Эммануил Ласкер",
+    position: "Чемпион мира по шахматам",
+  },
+  {
+    imgSrc: "./source/chelik.png",
+    fullName: "Александр Алехин",
+    position: "Чемпион мира по шахматам",
+  },
+  {
+    imgSrc: "./source/chelik.png",
+    fullName: "Арон Нимцович",
+    position: "Чемпион мира по шахматам",
+  },
+  {
+    imgSrc: "./source/chelik.png",
+    fullName: "Рихард Рети",
+    position: "Чемпион мира по шахматам",
+  },
+  {
+    imgSrc: "./source/chelik.png",
+    fullName: "Остап Бендер",
+    position: "Гроссмейстер",
+  },
+];
+
+
+let sliderContainer, prevBtn, nextBtn, participantsCounter, slider;
+let currentPage = 0;
+let totalParticipants = participants.length;
+let participantsPerPage;
+let intervalId;
+
+// Проверка ширины экрана и создание соответствующего блока поддержки
+function checkScreenWidth() {
+  const screenWidth = window.innerWidth;
+  if (screenWidth >= 1024) {
+    createSupportBlock();
+    createStagesBlock();
+    createParticipantsBlock();
+  } else {
+    createMobileSupportBlock();
+    createMobileStagesBlock();
+    createMobileParticipantsBlock();
+  }
+}
+
+// Инициализация при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  checkScreenWidth();
+  updateChessWrapperWidth();
+  updateParticipantsCounter();
+startSliderInterval();
+});
+
+// Обработка изменений ширины экрана
+window.addEventListener("resize", () => {
+  checkScreenWidth();
+  updateChessWrapperWidth();
+});
+
+
 const runLineWrappers = document.querySelectorAll(".run-line-wrapper");
-runLineWrappers.forEach(runLineWrapper => {
+runLineWrappers.forEach((runLineWrapper) => {
   for (let i = 0; i < 2; i++) {
     const runItem = document.createElement("div");
     runItem.classList.add("run-item");
@@ -10,7 +79,6 @@ runLineWrappers.forEach(runLineWrapper => {
     runLineWrapper.appendChild(runItem);
   }
 });
-
 
 function updateChessWrapperWidth() {
   const city = document.querySelector(".city");
@@ -206,153 +274,209 @@ function updateButtons() {
   }
 }
 
-const slider = document.querySelector(".slider");
 
-const participants = [
-  {
-    imgSrc: "./source/chelik.png",
-    fullName: "Хозе-Рауль Капабланка",
-    position: "Чемпион мира по шахматам",
-  },
-  {
-    imgSrc: "./source/chelik.png",
-    fullName: "Эммануил Ласкер",
-    position: "Чемпион мира по шахматам",
-  },
-  {
-    imgSrc: "./source/chelik.png",
-    fullName: "Александр Алехин",
-    position: "Чемпион мира по шахматам",
-  },
-  {
-    imgSrc: "./source/chelik.png",
-    fullName: "Арон Нимцович",
-    position: "Чемпион мира по шахматам",
-  },
-  {
-    imgSrc: "./source/chelik.png",
-    fullName: "Рихард Рети",
-    position: "Чемпион мира по шахматам",
-  },
-  {
-    imgSrc: "./source/chelik.png",
-    fullName: "Остап Бендер",
-    position: "Гроссмейстер",
-  },
-];
+function createParticipantsBlock() {
+  const participantsContent = document.querySelector(".participants-content");
+  participantsContent.innerHTML = `
+  <div class="text-wrap">
+  <h1>Участники турнира</h1>
+  <div class="navigation-participants">
+    <button class="prev-button-part">
+      <img src="./source/prev.svg" alt="" />
+    </button>
+    <p>3<span>/6</span></p>
+    <button class="next-button-part">
+      <img src="./source/next.svg" alt="" />
+    </button>
+  </div>
+  </div>
+  <div class="slider-container">
+    <div class="slider"></div>
+  </div>
+  `;
 
-for (let i = 0; i < Math.ceil(participants.length / 3); i++) {
+  slider = document.querySelector(".slider");
+  sliderContainer = document.querySelector(".slider-container");
+  prevBtn = document.querySelector(".prev-button-part");
+  nextBtn = document.querySelector(".next-button-part");
+  participantsCounter = document.querySelector(
+    ".navigation-participants p"
+  );
+
+  for (let i = 0; i < Math.ceil(participants.length / 3); i++) {
     const page = document.createElement("div");
     page.classList.add("page-participants");
-  
+
     for (let j = 0; j < 3; j++) {
       const currentIndex = i * 3 + j;
       if (currentIndex >= participants.length) break; // Проверка выхода за границы массива
-  
+
       const card = document.createElement("div");
       card.classList.add("card");
-  
+
       const img = document.createElement("img");
       img.src = participants[currentIndex].imgSrc;
       card.appendChild(img);
-  
+
       const fullName = document.createElement("p");
       fullName.classList.add("fullname");
       fullName.textContent = participants[currentIndex].fullName;
       card.appendChild(fullName);
-  
+
       const position = document.createElement("p");
       position.classList.add("pos");
       position.textContent = participants[currentIndex].position;
       card.appendChild(position);
-  
+
       const moreInfo = document.createElement("a");
       moreInfo.href = "#";
       moreInfo.classList.add("more-info");
       moreInfo.textContent = "Подробнее";
       card.appendChild(moreInfo);
-  
+
       page.appendChild(card);
     }
-  
+
     slider.appendChild(page);
   }
 
-const sliderContainer = document.querySelector(".slider-container");
-const prevBtn = document.querySelector(".prev-button-part");
-const nextBtn = document.querySelector(".next-button-part");
-const participantsCounter = document.querySelector(
-  ".navigation-participants p"
-);
+  participantsPerPage = 6/document.querySelectorAll('.page-participants').length;
 
-let currentPage = 0;
-let totalParticipants = participants.length; 
-let participantsPerPage = 3; 
-let intervalId;
+  prevBtn.addEventListener("click", () => {
+    clearInterval(intervalId);
+    currentPage =
+      currentPage === 0 ? slider.children.length - 1 : currentPage - 1;
+    updateSlider("right");
+    updateParticipantsCounter();
+    startSliderInterval();
+  });
+  
+  nextBtn.addEventListener("click", () => {
+    clearInterval(intervalId);
+    currentPage =
+      currentPage === slider.children.length - 1 ? 0 : currentPage + 1;
+    updateSlider("left");
+    updateParticipantsCounter();
+    startSliderInterval();
+  });
+}
 
-updateParticipantsCounter();
-startSliderInterval();
+function createMobileParticipantsBlock() {
+  const participantsContent = document.querySelector(".participants-content");
+  participantsContent.innerHTML = `
+  <div class="text-wrap">
+      <h1>Участники турнира</h1>
+    </div>
+    <div class="slider-container">
+      <div class="slider"></div>
+    </div>
+    <div class="navigation-participants">
+      <button class="prev-button-part">
+        <img src="./source/prev.svg" alt="" />
+      </button>
+      <p>3<span>/6</span></p>
+      <button class="next-button-part">
+        <img src="./source/next.svg" alt="" />
+      </button>
+    </div>
+  `;
 
-prevBtn.addEventListener('click', () => {
-  clearInterval(intervalId);
-  currentPage = (currentPage === 0) ? slider.children.length - 1 : currentPage - 1;
-  updateSlider('right');
-  updateParticipantsCounter();
-  startSliderInterval();
-});
+  slider = document.querySelector(".slider");
+  sliderContainer = document.querySelector(".slider-container");
+  prevBtn = document.querySelector(".prev-button-part");
+  nextBtn = document.querySelector(".next-button-part");
+  participantsCounter = document.querySelector(
+    ".navigation-participants p"
+  );
 
-nextBtn.addEventListener('click', () => {
-  clearInterval(intervalId); 
-  currentPage = (currentPage === slider.children.length - 1) ? 0 : currentPage + 1;
-  updateSlider('left');
-  updateParticipantsCounter();
-  startSliderInterval();
-});
+  for (let i = 0; i < participants.length; i++) {
+    const page = document.createElement("div");
+    page.classList.add("page-participants");
+
+    // Создаем карточку в каждом page-participants
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    const img = document.createElement("img");
+    img.src = participants[i % participants.length].imgSrc; // Используем остаток от деления для обращения к элементам массива
+    card.appendChild(img);
+
+    const fullName = document.createElement("p");
+    fullName.classList.add("fullname");
+    fullName.textContent = participants[i % participants.length].fullName;
+    card.appendChild(fullName);
+
+    const position = document.createElement("p");
+    position.classList.add("pos");
+    position.textContent = participants[i % participants.length].position;
+    card.appendChild(position);
+
+    const moreInfo = document.createElement("a");
+    moreInfo.href = "#";
+    moreInfo.classList.add("more-info");
+    moreInfo.textContent = "Подробнее";
+    card.appendChild(moreInfo);
+
+    page.appendChild(card);
+    slider.appendChild(page);
+  }
+
+  participantsPerPage = 6/document.querySelectorAll('.page-participants').length;
+
+  prevBtn.addEventListener("click", () => {
+    clearInterval(intervalId);
+    currentPage =
+      currentPage === 0 ? slider.children.length - 1 : currentPage - 1;
+    updateSlider("right");
+    updateParticipantsCounter();
+    startSliderInterval();
+  });
+  
+  nextBtn.addEventListener("click", () => {
+    clearInterval(intervalId);
+    currentPage =
+      currentPage === slider.children.length - 1 ? 0 : currentPage + 1;
+    updateSlider("left");
+    updateParticipantsCounter();
+    startSliderInterval();
+  });
+}
+
+
+// updateParticipantsCounter();
+// startSliderInterval();
+
 
 function updateSlider(direction) {
-  const newPosition = (direction === 'left') ? -currentPage * sliderContainer.offsetWidth : -(currentPage * sliderContainer.offsetWidth + sliderContainer.offsetWidth);
-  slider.style.transition = 'transform 0.5s ease';
+  const newPosition =
+    direction === "left"
+      ? -currentPage * sliderContainer.offsetWidth
+      : -(
+          currentPage * sliderContainer.offsetWidth
+        );
+  slider.style.transition = "transform 0.5s ease";
   slider.style.transform = `translateX(${newPosition}px)`;
 
   setTimeout(() => {
-    slider.style.transition = 'none';
+    slider.style.transition = "none";
   }, 500);
 }
 
 function updateParticipantsCounter() {
-  const currentPageParticipants = (currentPage === slider.children.length - 1) ? totalParticipants : (currentPage + 1) * participantsPerPage;
+  const currentPageParticipants =
+    currentPage === slider.children.length - 1
+      ? totalParticipants
+      : (currentPage + 1) * participantsPerPage;
   participantsCounter.textContent = `${currentPageParticipants}/${totalParticipants}`;
 }
 
 function startSliderInterval() {
-  clearInterval(intervalId); 
+  clearInterval(intervalId);
   intervalId = setInterval(() => {
-    currentPage = (currentPage === slider.children.length - 1) ? 0 : currentPage + 1;
-    updateSlider('left');
+    currentPage =
+      currentPage === slider.children.length - 1 ? 0 : currentPage + 1;
+    updateSlider("left");
     updateParticipantsCounter();
   }, 4000);
 }
 
-// Проверка ширины экрана и создание соответствующего блока поддержки
-function checkScreenWidth() {
-    const screenWidth = window.innerWidth;
-    if (screenWidth >= 1024) {
-      createSupportBlock();
-      createStagesBlock();
-    } else {
-      createMobileSupportBlock();
-      createMobileStagesBlock();
-    }
-  }
-
-// Инициализация при загрузке страницы
-document.addEventListener("DOMContentLoaded", () => {
-  checkScreenWidth();
-  updateChessWrapperWidth();
-});
-
-// Обработка изменений ширины экрана
-window.addEventListener("resize", () => {
-  checkScreenWidth();
-  updateChessWrapperWidth();
-});
