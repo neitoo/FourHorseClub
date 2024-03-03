@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   checkScreenWidth();
   updateChessWrapperWidth();
   updateParticipantsCounter();
-startSliderInterval();
+  startSliderInterval();
 });
 
 // Обработка изменений ширины экрана
@@ -443,10 +443,6 @@ function createMobileParticipantsBlock() {
 }
 
 
-// updateParticipantsCounter();
-// startSliderInterval();
-
-
 function updateSlider(direction) {
   const newPosition =
     direction === "left"
@@ -479,4 +475,3 @@ function startSliderInterval() {
     updateParticipantsCounter();
   }, 4000);
 }
-
